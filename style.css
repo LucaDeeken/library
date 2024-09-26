@@ -112,7 +112,8 @@ body {
 }
 
 #showDialog:hover {
-    background-color: rgb(0, 0, 255, .2);
+    background: linear-gradient(45deg, #ff6b6b, #f9ca24, #1dd1a1, #575fcf); /* Farbverlauf */
+    animation: gradient 4s ease infinite;
 }
 #showDialog:active { 
     transform: scale(0.98); 
