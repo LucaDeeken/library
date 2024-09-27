@@ -9,11 +9,10 @@
 </head>
 <body id="body">
 
-    <div class="outerContainer">
+    <div class="outerContainer" id="outerContainer">
         <img src="images/book.svg" alt="book icon" class="bookIcon">
         <dialog id="favDialog">
             <form>
-
                 <fieldset>
                     <legend class="legend">Füge ein Buch hinzu!</legend>
                     <p>
@@ -40,11 +39,11 @@
             </form>
         </dialog>
         <p class="dialogContainer">
-            <button id="showDialog">Add another Book!</button>
+            <button id="showDialog">Add Another Book!</button>
         </p>
-        <div class="card" >
+        <div class="card">
             <div id="ContentBox">
-                <div class="title">Titel:</div>
+                <div class="title">Title:</div>
                 <div class="content"></div>
             </div>
             <div id="ContentBox">
@@ -60,13 +59,13 @@
                 <div class="content"></div>
             </div>
             <div id="ButtonBox">
-                <button class="readButton">Finished</button>
-                <button class="removeButton">Remove</button>  
+                <button class="readButton" id="readButton" >Finished</button>
+                <button class="removeButton" id="removeButton" >Remove</button>  
             </div>
         </div>
         <div class="card">
             <div id="ContentBox">
-                <div class="title">Titel:</div>
+                <div class="title">Title:</div>
                 <div class="content"></div>
             </div>
             <div id="ContentBox">
@@ -88,7 +87,7 @@
         </div>
         <div class="card" id="lastCard">
             <div id="ContentBox">
-                <div class="title">Titel:</div>
+                <div class="title">Title:</div>
                 <div class="content"></div>
             </div>
             <div id="ContentBox">
@@ -109,7 +108,5 @@
             </div>  
         </div>
 </div>
-
-    
 </body>
 </html>
