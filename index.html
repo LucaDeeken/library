@@ -13,27 +13,28 @@
         <img src="images/book.svg" alt="book icon" class="bookIcon">
         <dialog id="favDialog">
             <form>
+
                 <fieldset>
-                    <legend class="legend">Füge ein Buch hinzu!</legend>
-                    <p>
+                    <legend class="legend">Add a book!</legend>
+                    <p id="inputfield">
                         <label for="titleInput">Title:</label>
                         <input type="text" name= "titleInput" id="titleInput">
                     </p>
-                    <p>
+                    <p id="inputfield">
                         <label for="authorInput">Author:</label>
                         <input type="text" name="author" id="authorInput">
                     </p>
-                    <p>
-                        <label for="sitesInput">Sites:</label>
+                    <p id="inputfield">
+                        <label for="sitesInput">Sites: </label>
                         <input type="number" name="sites" id="sitesInput">
                     </p>
-                    <p>
-                        <label for="readInput">Read?</label>
+                    <p id="inputfieldCheckbox">
+                        <label for="readInput">Already read?</label>
                         <input type="checkbox" name="read" id="readInput">
                     </p>
                 </fieldset>
-                <div>
-                    <button value="cancel" formmethod="dialog">Cancel</button>
+                <div id="buttonFieldInput">
+                    <button id="cancelBtn" value="cancel" formmethod="dialog">Cancel</button>
                     <button id="confirmBtn" value="default">Confirm</button>
                 </div>
             </form>
@@ -41,72 +42,77 @@
         <p class="dialogContainer">
             <button id="showDialog">Add Another Book!</button>
         </p>
-        <div class="card">
-            <div id="ContentBox">
-                <div class="title">Title:</div>
-                <div class="content"></div>
+        <div id="cardContainer">
+            <div class="card">
+                <div id="ContentBox">
+                    <div class="title">Title:</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ContentBox">
+                    <div class="author">Author:</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ContentBox">
+                    <div class="sites">Sites:</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ContentBox">
+                    <div class="read">Read?</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ButtonBox">
+                    <button class="readButton" id="readButton" >Finished</button>
+                    <button class="removeButton" id="removeButton" >Remove</button>  
+                </div>
             </div>
-            <div id="ContentBox">
-                <div class="author">Author:</div>
-                <div class="content"></div>
+            <div class="card">
+                <div id="ContentBox">
+                    <div class="title">Title:</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ContentBox">
+                    <div class="author">Author:</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ContentBox">
+                    <div class="sites">Sites:</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ContentBox">
+                    <div class="read">Read?</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ButtonBox">
+                    <button class="readButton">Finished</button>
+                    <button class="removeButton">Remove</button>  
+                </div>  
             </div>
-            <div id="ContentBox">
-                <div class="sites">Sites:</div>
-                <div class="content"></div>
-            </div>
-            <div id="ContentBox">
-                <div class="read">Read?</div>
-                <div class="content"></div>
-            </div>
-            <div id="ButtonBox">
-                <button class="readButton" id="readButton" >Finished</button>
-                <button class="removeButton" id="removeButton" >Remove</button>  
-            </div>
-        </div>
-        <div class="card">
-            <div id="ContentBox">
-                <div class="title">Title:</div>
-                <div class="content"></div>
-            </div>
-            <div id="ContentBox">
-                <div class="author">Author:</div>
-                <div class="content"></div>
-            </div>
-            <div id="ContentBox">
-                <div class="sites">Sites:</div>
-                <div class="content"></div>
-            </div>
-            <div id="ContentBox">
-                <div class="read">Read?</div>
-                <div class="content"></div>
-            </div>
-            <div id="ButtonBox">
-                <button class="readButton">Finished</button>
-                <button class="removeButton">Remove</button>  
+            <div class="card" id="lastCard">
+                <div id="ContentBox">
+                    <div class="title">Title:</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ContentBox">
+                    <div class="author">Author:</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ContentBox">
+                    <div class="sites">Sites:</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ContentBox">
+                    <div class="read">Read?</div>
+                    <div class="content"></div>
+                </div>
+                <div id="ButtonBox">
+                    <button class="readButton">Finished</button>
+                    <button class="removeButton">Remove</button>  
+                </div>
             </div>  
         </div>
-        <div class="card" id="lastCard">
-            <div id="ContentBox">
-                <div class="title">Title:</div>
-                <div class="content"></div>
-            </div>
-            <div id="ContentBox">
-                <div class="author">Author:</div>
-                <div class="content"></div>
-            </div>
-            <div id="ContentBox">
-                <div class="sites">Sites:</div>
-                <div class="content"></div>
-            </div>
-            <div id="ContentBox">
-                <div class="read">Read?</div>
-                <div class="content"></div>
-            </div>
-            <div id="ButtonBox">
-                <button class="readButton">Finished</button>
-                <button class="removeButton">Remove</button>  
-            </div>  
-        </div>
+    </div>
 </div>
+
+    
 </body>
 </html>
