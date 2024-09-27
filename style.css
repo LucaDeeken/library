@@ -20,22 +20,33 @@ body {
     display: grid;
     max-height: 100%;
     max-width: 100%;
-    grid-column: 3/15;
+    grid-column: 2/15;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 0.2fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr 1fr;
     justify-items: center;
     border-radius: 20px;
-    margin: 2rem;
+    margin: 1rem;
     background-color: rgb(248, 238, 225);
+    column-gap: 3rem;
 
 }
 
+#cardContainer {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 20rem));
+    grid-column: 1/5;
+    width: 100%;
+    column-gap: 3rem;
+    justify-content: center;
+}
+
 .card {
-    height: 18rem;
-    width: 18rem;
+    height: 20rem;
+    width: 20rem;
     background-color: rgb(255, 255, 255);
     margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     border-radius: 15px;
@@ -50,18 +61,21 @@ body {
 
 .legend {
 
-    text-align: center;
+ text-align: center;
 }
 
 .dialogContainer {
     grid-row: 2/3;
     grid-column: 1/5;
+    align-self: center;
 }
 
 .bookIcon {
     grid-column: 1/5;
     height: 4rem;
     width: 4rem;
+    align-self: center;
+    margin-top: 1rem;
 }
 
 #ContentBox {
@@ -87,18 +101,19 @@ body {
 }
 
 .readButton, .removeButton {
-    margin: 0.5rem;
+    margin: 0.65rem;
     border-radius: 1rem;
     border: 2px solid silver;
     background-color: rgb(245, 243, 243);
     cursor: pointer;
+    font-weight: 600;
 }
 
-.removeButton:hover {
+.removeButton:hover, #cancelBtn:hover {
     background-color: rgb(248, 159, 159);
 }
 
-.readButton:hover {
+.readButton:hover, #confirmBtn:hover {
     background-color: rgb(166, 252, 142);
 }
 
@@ -121,3 +136,89 @@ body {
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
     /* Lowering the shadow */ 
 } 
+
+#favDialog {
+
+    height: 25rem;
+    width: 25rem;
+    border: 7px solid rgb(96, 96, 96);
+    border-radius: 15px;
+}
+
+fieldset {
+
+    height: 19rem;
+    display: grid;
+    grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr;
+    border: 3px solid rgba(0, 0, 255, .2);
+}
+
+label {
+
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+input {
+
+    height: 1.5rem;
+    font-size: large;
+}
+
+#titleInput, #authorInput {
+
+    width: 20rem;
+}
+
+#sitesInput {
+
+    width: 6rem;
+}
+
+#readInput {
+    transform: scale(1.7);
+    margin-left: 1.2rem;
+}
+legend {
+
+    font-size: 1.5rem;
+}
+
+#inputfield {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 0.3rem;
+    justify-content: start;
+}
+
+#inputfieldCheckbox {
+    display: flex;
+    margin: 0.3rem;
+    margin-top: 0.5rem;
+    justify-content: start;
+    align-items: center;
+    
+
+}
+
+
+
+#buttonFieldInput {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#cancelBtn, #confirmBtn {
+
+    margin: 1.5rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid silver;
+
+}
+
+#readInput {
+
+     margin-right: 4rem;
+}
