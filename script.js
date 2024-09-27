@@ -4,16 +4,34 @@ const myLibrary = [
     {title: "Buddenbrooks", author: "Thomas Mann", sites: 768, read: "Yes"},
   ];
 
-//shiw library on cards 
+const showButton = document.getElementById("showDialog");
+const favDialog = document.getElementById("favDialog");
+const outputBox = document.querySelector("output");
+const titleInput = document.getElementById("titleInput");
+const authorInput = document.getElementById("authorInput");
+const sitesInput = document.getElementById("sitesInput");
+const readInput = document.getElementById("readInput");
+const confirmBtn = favDialog.querySelector("#confirmBtn");
+const lastCard = document.getElementById("lastCard");
+const outerContainer = document.getElementById("outerContainer");
+let readButton = document.querySelectorAll(".readButton");
+let removeButton = document.querySelectorAll(".removeButton");
 const cardContent = document.getElementsByClassName("content");
 
+//shiw library on cards 
 function getBooksOnCards() {
   let j = 0;
-    for (let i=0; i<myLibrary.length; i++) {
-    
+  const existingCards = document.getElementsByClassName("card");
+  let readButton = document.querySelectorAll(".readButton");
+  let removeButton = document.querySelectorAll(".removeButton");
+    for (let i=0; i<myLibrary.length; i++) { 
         const books = myLibrary[i];
+        existingCards[i].setAttribute('data-index', [i]);
+        readButton[i].setAttribute('data-index', [i]);
+        removeButton[i].setAttribute('data-index', [i]);
         for (let key in books) {
-            cardContent[j].textContent = `${books[key]}`; j++ 
+            cardContent[j].textContent = `${books[key]}`;
+            j++ 
         };    
     };
 };
@@ -27,28 +45,15 @@ function Book(title, author, sites, read) {
   this.read = read;
 }
 
-// "Show the dialog" button opens the <dialog> modally
-const showButton = document.getElementById("showDialog");
-const favDialog = document.getElementById("favDialog");
-const outputBox = document.querySelector("output");
-const titleInput = document.getElementById("titleInput");
-const authorInput = document.getElementById("authorInput");
-const sitesInput = document.getElementById("sitesInput");
-const readInput = document.getElementById("readInput");
-const confirmBtn = favDialog.querySelector("#confirmBtn");
-const lastCard = document.getElementById("lastCard");
-const outerContainer = document.getElementById("outerContainer");
-let readButton = document.querySelectorAll(".readButton");
-
 showButton.addEventListener("click", () => {
   favDialog.showModal();
 });
 
 //function to toggle between Yes and No (Read-Status)
 function readButtonClicked() {
+  getBooksOnCards();
   const clickedButton = event.target;
   const clickedButtonIndex = clickedButton.dataset.index;
-  console.log(clickedButtonIndex);
   const bookCard = document.querySelector(`[data-index="${clickedButtonIndex}"]`);
   const bookIndex = bookCard.dataset.index;
   const book = myLibrary[bookIndex];
@@ -67,6 +72,17 @@ function readButtonClicked() {
     }
   };
 
+function deleteButtonClicked() {
+  getBooksOnCards();
+  const clickedDelete = event.target;
+  const deleteButtonIndex = clickedDelete.dataset.index;
+  const bookCard = document.querySelector(`[data-index="${deleteButtonIndex}"]`);
+  const bookIndex = bookCard.dataset.index;
+  myLibrary.splice((bookIndex), 1);
+  bookCard.remove();
+  getBooksOnCards();
+};
+
 //add new Object to a new Card-Container
 confirmBtn.addEventListener("click", (event) => {
   event.preventDefault();
@@ -80,10 +96,15 @@ confirmBtn.addEventListener("click", (event) => {
   outerContainer.appendChild(newCard);
   getBooksOnCards();
   favDialog.querySelector("form").reset();
+  const removeButton = newCard.querySelector(".removeButton");
   const readButton = newCard.querySelector(".readButton");
+  removeButton.setAttribute('data-index', myLibrary.length - 1);
   readButton.setAttribute('data-index', myLibrary.length - 1);
   readButton.addEventListener("click", (event) => {
     readButtonClicked();   
+  });
+  removeButton.addEventListener("click", (event) => {
+    deleteButtonClicked();
   });
 });
 
@@ -91,5 +112,11 @@ confirmBtn.addEventListener("click", (event) => {
   readButton.forEach(readButton => {
     readButton.addEventListener("click", (event) => {
       readButtonClicked();
+    });
+  });
+
+  removeButton.forEach(removeButton => {
+    removeButton.addEventListener("click", (event) => {
+      deleteButtonClicked();
     });
   });
