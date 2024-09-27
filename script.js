@@ -6,7 +6,6 @@ const myLibrary = [
 
 const showButton = document.getElementById("showDialog");
 const favDialog = document.getElementById("favDialog");
-const outputBox = document.querySelector("output");
 const titleInput = document.getElementById("titleInput");
 const authorInput = document.getElementById("authorInput");
 const sitesInput = document.getElementById("sitesInput");
@@ -95,7 +94,6 @@ confirmBtn.addEventListener("click", (event) => {
   newCard.setAttribute('data-index', myLibrary.length - 1);
   outerContainer.appendChild(newCard);
   getBooksOnCards();
-  favDialog.querySelector("form").reset();
   const removeButton = newCard.querySelector(".removeButton");
   const readButton = newCard.querySelector(".readButton");
   removeButton.setAttribute('data-index', myLibrary.length - 1);
@@ -108,13 +106,12 @@ confirmBtn.addEventListener("click", (event) => {
   });
 });
 
-//Add EventListener to readButtons
+//Add EventListener to readButtons&removeButtons
   readButton.forEach(readButton => {
     readButton.addEventListener("click", (event) => {
       readButtonClicked();
     });
   });
-
   removeButton.forEach(removeButton => {
     removeButton.addEventListener("click", (event) => {
       deleteButtonClicked();
