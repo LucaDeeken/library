@@ -110,11 +110,11 @@ body {
 }
 
 .removeButton:hover, #cancelBtn:hover {
-    background-color: rgb(248, 159, 159);
+    background-color: rgb(246, 187, 187);
 }
 
 .readButton:hover, #confirmBtn:hover {
-    background-color: rgb(166, 252, 142);
+    background-color: rgb(203, 249, 190);
 }
 
 #showDialog {
@@ -127,7 +127,7 @@ body {
 }
 
 #showDialog:hover {
-    background: linear-gradient(45deg, #ff6b6b, #f9ca24, #1dd1a1, #575fcf); /* Farbverlauf */
+    background: linear-gradient(45deg, #ff9c9c, #f8e398, #8ee1cb, #7e83cb); /* Farbverlauf */
     animation: gradient 4s ease infinite;
 }
 #showDialog:active { 
