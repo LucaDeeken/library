@@ -22,7 +22,7 @@ body {
     max-width: 100%;
     grid-column: 2/15;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 0.1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr;
     justify-items: center;
     border-radius: 20px;
     margin: 1rem;
