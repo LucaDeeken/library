@@ -37,11 +37,15 @@ function getBooksOnCards() {
 getBooksOnCards();
 
 // the Book-constructor
-function Book(title, author, sites, read) {
-  this.title = title;
-  this.author = author;
-  this.sites = sites;
-  this.read = read;
+
+
+class Book {
+  constructor(title, author, sites, read) {
+    this.title = title;
+    this.author = author;
+    this.sites = sites;
+    this.read = read;
+  }
 }
 
 showButton.addEventListener("click", () => {
